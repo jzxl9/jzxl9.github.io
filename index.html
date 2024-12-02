@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>金中仙林七九官网</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+    <style>
+      
+
+
+      body {
+        color: var(--text-color);
+        background-color: var(--background-color);
+      }
+
+      body {
+        font-family: "Roboto", Arial, sans-serif;
+      }
+
+      a:hover {
+        color: var(--secondary-color);
+      }
+
+      .btn:hover {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn {
+        transition: all 0.3s ease;
+      }
+
+      .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .container {
+        padding: 2rem;
+      }
+
+      .card {
+        margin: 1rem;
+        padding: 1.5rem;
+      }
+
+      @media (max-width: 768px) {
+        .resource-cards {
+          flex-direction: column;
+        }
+      }
+
+      .loading {
+        width: 50px;
+        height: 50px;
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid #3498db;
+        border-radius: 50%;
+        animation: spin 2s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      body {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f8f8f8;
+      }
+
+      a {
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .navbar {
+        background-color: #242424;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      .resource-cards {
+        gap: 30px; /* 增加卡片之间的间距 */
+      }
+
+      .card {
+        border-radius: 8px; /* 增加卡片的圆角 */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 增加卡片的阴影 */
+      }
+
+      .card:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 悬停时增加阴影 */
+      }
+
+      .btn {
+        border-radius: 8px; /* 增加按钮的圆角 */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 增加按钮的阴影 */
+      }
+
+      .btn:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 悬停时增加阴影 */
+      }
+
+      footer {
+        background-color: #242424;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      footer p {
+        margin: 0;
+      }
+
+      #backToTopButton {
+        border-radius: 50%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      #backToTopButton:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      body,
+      .navbar,
+      .intro,
+      .quote-of-the-day,
+      .latest-updates,
+      .update-item,
+      .card,
+      .btn {
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      }
+
+      body,
+      h1,
+      p {
+        margin: 0;
+        padding: 0;
+        font-family: "Roboto", sans-serif;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        color: white;
+        padding: 10px 20px;
+      }
+
+      .nav-links li {
+        list-style: none;
+        display: inline-block;
+        margin-left: 20px;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        padding: 5px 10px;
+        transition: color 0.3s ease, background-color 0.3s ease,
+          transform 0.3s ease;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: #ddd;
+        background-color: rgba(255, 255, 255, 0.1);
+        transform: scale(1.05);
+      }
+
+      .intro {
+        text-align: center;
+        padding: 50px;
+        background-color: #f1f1f1;
+      }
+
+      .intro h1 {
+        margin-bottom: 20px; /* 增加标题与第一段文字之间的距离 */
+      }
+
+      .intro p {
+        margin-bottom: 20px; /* 增加段落之间的距离 */
+      }
+
+      .quote-of-the-day {
+        text-align: center;
+        padding: 20px;
+        background-color: #f1f1f1;
+        margin: 20px 0;
+        font-style: italic;
+      }
+
+      .resource-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
+      }
+
+      .card {
+        border: 1px solid #ddd;
+        margin: 10px;
+        padding: 20px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .card img {
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 10px;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: #5cb85c;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #4cae4c;
+      }
+
+      @media screen and (max-width: 768px) {
+        .navbar {
+          flex-direction: column;
+        }
+
+        .nav-links li {
+          margin-bottom: 10px;
+        }
+
+        .resource-cards {
+          flex-direction: column;
+        }
+      }
+
+      .latest-updates {
+        background-color: #f1f1f1;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .latest-updates h2 {
+        color: #333;
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      .update-item {
+        border: 1px solid #ddd;
+        margin: 10px;
+        padding: 20px;
+        text-align: left;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .update-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .update-item:not(:last-child) {
+        margin-bottom: 20px;
+      }
+
+      #backToTopButton {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 99;
+        border: none;
+        outline: none;
+        background-color: #5cb85c;
+        color: white;
+        cursor: pointer;
+        padding: 10px 15px;
+        border-radius: 50%;
+        font-size: 18px;
+        display: none;
+      }
+
+      #backToTopButton:hover {
+        background-color: #4cae4c;
+      }
+
+      quote-of-the-day,
+      .shortcuts {
+        text-align: center; /* 使文本居中 */
+        padding: 20px;
+        background-color: #f1f1f1; /* 设置背景颜色与每日一句相同 */
+        margin: 20px 0; /* 与每日一句部分的外边距保持一致 */
+      }
+
+      .shortcuts ul {
+        list-style: none; /* 移除列表项前的默认标记 */
+        padding-left: 0; /* 移除左内边距 */
+        margin-left: 20px; /* 向左对齐 */
+      }
+
+      .shortcuts li {
+        margin-bottom: 10px; /* 列表项之间的间距 */
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="passwordModal"
+      style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div style="background-color: white; padding: 20px; border-radius: 5px">
+        <h2>七九官网欢迎您</h2>
+        <h3>请输入密码</h3>
+        <input type="password" id="passwordInput" />
+        <br />
+        <br />
+        <center><button onclick="checkPassword()">提交</button></center>
+      </div>
+    </div>
+    <div id="mainContent" style="display: none">
+      <header>
+        <nav class="navbar">
+          <div class="logo">金中仙林七九官网</div>
+          <ul class="nav-links">
+            <li>
+              <a href="#home" class="active"><i class="fa fa-home"></i> 首页</a>
+            </li>
+            <li>
+              <a href="resources.html"><i class="fa fa-book"></i> 资源</a>
+            </li>
+            <li>
+              <a href="about.html"
+                ><i class="fa fa-info-circle"></i> 关于本站</a
+              >
+            </li>
+            <li>
+              <a href="contact.html"><i class="fa fa-envelope"></i> 联系站长</a>
+            </li>
+            <li>
+              <a href="links.html"><i class="fa fa-link"></i> 友情链接</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <section class="intro" id="home">
+          <h1><strong>欢迎来到金中仙林七九班官网</strong></h1>
+          <h2><div id="realtime-clock"></div></h2>
+          <p><strong>探索无限可能，分享知识与智慧。</strong></p>
+          <p>
+            本站由雪碧bir（王崇治）制作，致力于为您提供最优质的资源分享平台。
+          </p>
+          <p>
+            <strong
+              >特别鸣谢 ：<a href="特别鸣谢（李乐童）.html" target="_blank"
+                >李乐童（单击了解更多）</a
+              ></strong
+            >
+          </p>
+        </section>
+
+        <section class="quote-of-the-day">
+          <h2>每日一句</h2>
+          <p>我收集每一个快乐的瞬间，来对抗每一个糟糕的日子。 ---珍妮·罗森-</p>
+        </section>
+
+        <section class="shortcuts">
+          <h2>百宝箱</h2>
+          <h3><a href="快捷键.html" target="_blank">快捷键大全</a></h3>
+          <h3><a href="动漫.html" target="_blank">动漫</a></h3>
+          <h3><a href="小说.html" target="_blank">小说</a></h3>
+          <h3><a href="网盘.html" target="_blank">网盘</a></h3>
+        </section>
+
+        <section class="latest-updates">
+          <h2>最新动态</h2>
+          <div class="update-item">
+            <h3>百宝箱内容更新</h3>
+            <p>2024.12.02百宝箱内容更新</p>
+          </div>
+          <div class="update-item">
+            <h3>新增百宝箱区域</h3>
+            <p>2024.12.02首页新增百宝箱区域</p>
+          </div>
+          <div class="update-item">
+            <h3>新增实时时间显示</h3>
+            <p>2024.12.02新增实时时间显示</p>
+          </div>
+          <div class="update-item">
+            <h3>新增特别鸣谢超链接显示</h3>
+            <p>2024.12.02新增特别鸣谢超链接显示</p>
+          </div>
+          
+          <div class="update-item">
+            <h3>新增导航栏图标</h3>
+            <p>2024.11.29增加导航栏图标</p>
+          </div>
+          <div class="update-item">
+            <h3>更新友情链接内容</h3>
+            <p>2024.11.29更新友情链接内容</p>
+          </div>
+          <div class="update-item">
+            <h3>新增友情链接</h3>
+            <p>
+              2024.11.28增加友情链接部分，其中分享有用、有趣的网站，可直达网站
+            </p>
+          </div>
+          <div class="update-item">
+            <h3>新增每日一句</h3>
+            <p>2024.11.28增加每日一句部分，持续更新好句</p>
+          </div>
+          <div class="update-item">
+            <h3>新增最新动态</h3>
+            <p>2024.11.28增加最新动态部分，持续记录更新内容</p>
+          </div>
+          <!-- 更多更新 -->
+        </section>
+      </main>
+
+      <footer>
+        <center><p>版权所有 © 2024 雪碧bir（王崇治）</p></center>
+      </footer>
+
+      <button onclick="scrollToTop()" id="backToTopButton" title="回到顶部">
+        ↑
+      </button>
+    </div>
+
+    <script>
+      function updateClock() {
+        var now = new Date(); // 获取当前时间
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var seconds = now.getSeconds();
+
+        // 如果小于10，添加0前缀，以保持两位数字的格式
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        var timeString = hours + ":" + minutes + ":" + seconds;
+        document.getElementById("realtime-clock").textContent = timeString;
+
+        // 每秒更新时间
+        setTimeout(updateClock, 1000);
+      }
+
+      // 页面加载完成后立即更新时间
+      window.onload = updateClock;
+      function checkPassword() {
+        var password = document.getElementById("passwordInput").value;
+        if (password === "jz79") {
+          // 假设正确的密码是"jz79"
+          sessionStorage.setItem("password", "correct"); // 使用sessionStorage存储密码状态
+          document.getElementById("passwordModal").style.display = "none"; // 隐藏密码输入框
+          document.getElementById("mainContent").style.display = "block"; // 显示主要内容
+        } else {
+          alert("密码错误");
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // 检查sessionStorage中是否有密码标识
+        if (sessionStorage.getItem("password") === "correct") {
+          document.getElementById("mainContent").style.display = "block"; // 显示主要内容
+          document.getElementById("passwordModal").style.display = "none"; // 隐藏密码输入框
+        } else {
+          document.getElementById("passwordModal").style.display = "flex"; // 显示密码输入框
+        }
+      });
+
+      // 当用户滚动到一定位置时，显示回到顶部按钮
+      window.onscroll = function () {
+        showButton();
+      };
+      function showButton() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          document.getElementById("backToTopButton").style.display = "block";
+        } else {
+          document.getElementById("backToTopButton").style.display = "none";
+        }
+      }
+
+      // 点击按钮时，平滑滚动到页面顶部
+      function scrollToTop() {
+        document.body.scrollTop = 0; // 对于Safari
+        document.documentElement.scrollTop = 0; // 对于Chrome, Firefox, IE和Opera
+      }
+
+      // 简单的动画效果，当页面加载完成后，卡片淡入
+      window.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelectorAll(".card").forEach((card) => {
+          card.style.opacity = 0;
+          card.offsetHeight; // 触发重绘
+          card.style.transition = "opacity 0.5s ease-in";
+          card.style.opacity = 1;
+        });
+      });
+    </script>
+  </body>
+</html>
