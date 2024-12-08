@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>教师团队 - 七九官网</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f8f8f8;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        padding: 20px;
+      }
+      .profile-header {
+        text-align: center;
+        background-color: #007bff;
+        color: white;
+        padding: 50px 20px;
+      }
+      .profile-header h1 {
+        margin: 0;
+      }
+      .profile-body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 20px;
+        padding: 20px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .teacher-card {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        margin-bottom: 20px;
+      }
+      .teacher-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+      .teacher-image {
+        width: 150px;
+        height: 200px;
+        border-radius: 10px; /* 添加圆角 */
+        margin-right: 20px;
+      }
+      .teacher-info {
+        flex-grow: 1;
+      }
+      /* Password modal styles */
+      #passwordModal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #passwordModal div {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="passwordModal">
+      <div>
+        <h2>您即将跳转到机密页面<br />若有意外站长不负任何责任</h2>
+        <h3>同意请输入Yes进入</h3>
+        <input type="password" id="passwordInput" />
+        <br />
+        <br />
+        <button onclick="checkPassword()">提交</button>
+      </div>
+    </div>
+    <div id="mainContent">
+      <div class="container">
+        <div class="profile-header">
+          <h1>教师团队 - 金陵中学七九官网</h1>
+        </div>
+        <div class="profile-body">
+          <!-- 教师卡片 -->
+          <div class="teacher-card">
+            <img src="liuzhenhua.png" alt="教师1" class="teacher-image" />
+            <div class="teacher-info">
+              <h3>刘振华</h3>
+              <p>教授科目：语文</p>
+              <p>党员承诺：淡泊明志，宁静致远。</p>
+              <p>
+                简介：他承担着2024级9班与10班语文教育的重担，他教学认真，对同学们都极度负责任，课堂有趣，不管成绩好坏的同学，如果他们压力太大或者过度劳累以至于上课睡觉，他都会将给予鼓励并免费按摩，十分舒适，同学们都非常喜欢他。<br />他也有自己的兴趣爱好，当他完成了工作后，他会看一会《斗罗大陆》，闲暇时间，他还会与同学一起做引体向上，他对我们的体育很重视，常带领着同学们练习身体素质
+              </p>
+            </div>
+          </div>
+          <div class="teacher-card">
+            <img src="yuningyuan.jpg" alt="教师2" class="teacher-image" />
+            <div class="teacher-info">
+              <h3>遇宁远</h3>
+              <p>教授科目：数学</p>
+              <p>
+                简介：她是新一届的老师，承担着9班与10班数学教育的重担，是一名非常优秀的数学老师，她头脑十分敏捷，没有问题能够难倒她（不知道再写点啥了）
+              </p>
+            </div>
+          </div>
+          <div class="teacher-card">
+            <img src="86wangping.jpg" alt="教师2" class="teacher-image" />
+            <div class="teacher-info">
+              <h3>王萍萍</h3>
+              <p>教授科目：英语</p>
+              <p>党员承诺：不忘初心，致知力行，踵事增华。</p>
+              <p>
+                简介：她承担着9班与10班英语教育的重担，她对本班学生非常上心，课堂上，有学生走神、睡觉，她总是一遍又一遍的喊着：“抬头！！！”“看黑板！！！”，每当有人不记笔记的时候，她也会：“记笔记！！！”“我写的要原封不动地抄下来！！！”大家都很喜欢上她的英语课
+              </p>
+            </div>
+          </div>
+          <!-- 更多教师卡片 -->
+        </div>
+      </div>
+    </div>
+    <body>
+      <script>
+        function checkPassword() {
+          var password = document.getElementById("passwordInput").value;
+          if (password === "Yes") {
+            sessionStorage.setItem("password", "correct"); // 使用sessionStorage存储密码状态
+            document.getElementById("passwordModal").style.display = "none"; // 隐藏密码输入框
+            document.getElementById("mainContent").style.display = "block"; // 显示主要内容
+          } else {
+            alert("密码错误");
+          }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+          if (sessionStorage.getItem("password") === "correct") {
+            document.getElementById("mainContent").style.display = "block"; // 显示主要内容
+            document.getElementById("passwordModal").style.display = "none"; // 隐藏密码输入框
+          } else {
+            document.getElementById("passwordModal").style.display = "flex"; // 显示密码输入框
+          }
+        });
+      </script>
+    </body>
+  </body>
+</html>
